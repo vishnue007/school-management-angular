@@ -1,0 +1,54 @@
+<div class="page-wrapper">
+
+  <div class="glass-card">
+    <div class="title-section">
+      <h1>School Registration</h1>
+      <p>Create a student account for school admission</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-body">
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" placeholder="Student's full name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" placeholder="10-digit mobile number" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Select Grade</mat-label>
+        <mat-select formControlName="grade">
+          <mat-option value="1">1st Standard</mat-option>
+          <mat-option value="2">2nd Standard</mat-option>
+          <mat-option value="3">3rd Standard</mat-option>
+          <mat-option value="4">4th Standard</mat-option>
+          <mat-option value="5">5th Standard</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Parent Name</mat-label>
+        <input matInput formControlName="parentName" placeholder="Parent/Guardian name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Create password" />
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" class="submit-btn" type="submit">
+        Register Now
+      </button>
+
+    </form>
+  </div>
+
+</div>
