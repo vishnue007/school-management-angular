@@ -1,0 +1,51 @@
+<!-- Navbar -->
+<nav class="w-full fixed top-0 left-0 z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-extrabold text-blue-900">Bright Future School</h1>
+
+    <ul class="hidden md:flex gap-8 font-medium text-blue-900">
+      <li routerLink="/home" routerLinkActive="text-yellow-500" class="cursor-pointer">Home</li>
+      <li routerLink="/about" routerLinkActive="text-yellow-500" class="cursor-pointer">About</li>
+      <li routerLink="/contact" routerLinkActive="text-yellow-500" class="cursor-pointer">Contact</li>
+    </ul>
+
+    <!-- Mobile menu toggle can be added later -->
+  </div>
+</nav>
+
+<!-- Pages will be rendered here -->
+ <div class="pt-20">
+     <router-outlet></router-outlet>
+ </div>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="font-bold text-lg">Bright Future School</h3>
+      <p class="mt-2 opacity-80">
+        Providing quality education with values and discipline.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-lg">Quick Links</h3>
+      <ul class="mt-2 space-y-2 opacity-90">
+        <li routerLink="/" class="hover:text-yellow-400 cursor-pointer">Home</li>
+        <li routerLink="/about" class="hover:text-yellow-400 cursor-pointer">About</li>
+        <li routerLink="/contact" class="hover:text-yellow-400 cursor-pointer">Contact</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-lg">Contact Info</h3>
+      <p class="mt-2 opacity-90">📍 Trivandrum, Tamil Nadu</p>
+      <p class="opacity-90">📞 +91 98765 43210</p>
+      <p class="opacity-90">📧 school@example.com</p>
+    </div>
+  </div>
+
+  <p class="text-center opacity-70 text-sm mt-8">
+    © 2025 Bright Future School. All rights reserved.
+  </p>
+</footer>

@@ -1,54 +1,86 @@
-<div class="page-wrapper">
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+  <div class="w-full max-w-lg bg-white shadow-xl rounded-2xl p-8">
 
-  <div class="glass-card">
-    <div class="title-section">
-      <h1>School Registration</h1>
-      <p>Create a student account for school admission</p>
-    </div>
+    <h2 class="text-3xl font-bold text-center text-indigo-600 mb-6">
+      School Registration
+    </h2>
 
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-5">
+      
+      <!-- Student Name -->
+      <div>
+        <label for="name" class="block text-gray-700 font-semibold mb-1">Student Name</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          placeholder="Enter student name"
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+        />
+      </div>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Full Name</mat-label>
-        <input matInput formControlName="fullName" placeholder="Student's full name" />
-      </mat-form-field>
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-1">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter email"
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+        />
+      </div>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" placeholder="Enter email" />
-      </mat-form-field>
+      <!-- Class -->
+      <div>
+        <label for="class" class="block text-gray-700 font-semibold mb-1">Class</label>
+        <select
+          formControlName="class"
+          id="class"
+          class="w-full px-4 py-2 border rounded-lg bg-white focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+        >
+          <option value="" disabled selected>Select Class</option>
+          <option *ngFor="let c of classes" [value]="c">{{ c }}</option>
+        </select>
+      </div>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Phone Number</mat-label>
-        <input matInput formControlName="phone" placeholder="10-digit mobile number" />
-      </mat-form-field>
+      <!-- Section -->
+      <div>
+        <label for="section" class="block text-gray-700 font-semibold mb-1">Section</label>
+        <select
+          formControlName="section"
+          id="section"
+          class="w-full px-4 py-2 border rounded-lg bg-white focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+        >
+          <option value="" disabled selected>Select Section</option>
+          <option *ngFor="let s of sections" [value]="s">{{ s }}</option>
+        </select>
+      </div>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Select Grade</mat-label>
-        <mat-select formControlName="grade">
-          <mat-option value="1">1st Standard</mat-option>
-          <mat-option value="2">2nd Standard</mat-option>
-          <mat-option value="3">3rd Standard</mat-option>
-          <mat-option value="4">4th Standard</mat-option>
-          <mat-option value="5">5th Standard</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <!-- Gender -->
+      <div>
+        <label for="gender" class="block text-gray-700 font-semibold mb-2">Gender</label>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" value="Male" formControlName="gender" />
+            Male
+          </label>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Parent Name</mat-label>
-        <input matInput formControlName="parentName" placeholder="Parent/Guardian name" />
-      </mat-form-field>
+          <label class="flex items-center gap-2">
+            <input type="radio" value="Female" formControlName="gender" />
+            Female
+          </label>
+        </div>
+      </div>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" placeholder="Create password" />
-      </mat-form-field>
-
-      <button mat-flat-button color="primary" class="submit-btn" type="submit">
-        Register Now
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition"
+      >
+        Register
       </button>
 
     </form>
   </div>
-
 </div>

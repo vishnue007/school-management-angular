@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -7,7 +8,9 @@ import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
   imports: [ 
+    CommonModule,
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
@@ -17,16 +20,18 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './register.scss',
 })
 export class Register {
+  classes = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th'];
+  sections = ['A', 'B', 'C', 'D'];
+
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
-      fullName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
-      grade: ['', Validators.required],
-      parentName: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      class: ['', Validators.required],
+      section: ['', Validators.required],
+      gender: ['', Validators.required],
     });
   }
 
@@ -34,7 +39,8 @@ export class Register {
     if (this.registerForm.valid) {
       console.log('Student Registered:', this.registerForm.value);
       alert('Registration Successful!');
-      this.registerForm.reset();
+    } else {
+      this.registerForm.markAllAsTouched();
     }
   }
 }
