@@ -1,0 +1,75 @@
+<div class="flex min-h-screen bg-gradient-to-br from-indigo-50 to-pink-50">
+
+  <!-- Sidebar -->
+<aside class="w-64 bg-white shadow-md p-4">
+  <div class="p-4 text-2xl font-bold text-indigo-600">
+    <a routerLink="/dashboard" class="block p-2 rounded hover:bg-pink-50 text-pink-600">
+    🎓 Admin
+    </a>
+  </div>
+
+  <nav class="space-y-2">
+
+    <!-- Students Section -->
+    <div>
+      <button
+        (click)="toggleMenu('students')"
+        class="flex justify-between items-center w-full p-3 rounded-xl hover:bg-pink-100 text-pink-700 font-medium"
+      >
+        Students
+        <span [ngClass]="{'rotate-180': openMenu.students}" class="transition-transform duration-300">
+          ▼
+        </span>
+      </button>
+
+      <div *ngIf="openMenu.students" class="ml-4 mt-2 space-y-1">
+        <a routerLink="/students/add" class="block p-2 rounded hover:bg-pink-50 text-pink-600">
+          Add Student
+        </a>
+        <a routerLink="/admin/students/list" class="block p-2 rounded hover:bg-pink-50 text-pink-600">
+          Student List
+        </a>
+      </div>
+    </div>
+
+    <!-- Teachers Section -->
+    <div>
+      <button
+        (click)="toggleMenu('teachers')"
+        class="flex justify-between items-center w-full p-3 rounded-xl hover:bg-blue-100 text-blue-700 font-medium"
+      >
+        Teachers
+        <span [ngClass]="{'rotate-180': openMenu.teachers}" class="transition-transform duration-300">
+          ▼
+        </span>
+      </button>
+
+      <div *ngIf="openMenu.teachers" class="ml-4 mt-2 space-y-1">
+        <a routerLink="/admin/teachers/add" class="block p-2 rounded hover:bg-blue-50 text-blue-600">
+          Add Teacher
+        </a>
+        <a routerLink="/admin/teachers/list" class="block p-2 rounded hover:bg-blue-50 text-blue-600">
+          Teacher List
+        </a>
+      </div>
+    </div>
+    <div>
+         <a class="block p-3 rounded-xl hover:bg-green-100 text-green-700">
+        Staffs
+      </a>
+      </div>
+      <div>
+      <a class="block p-3 rounded-xl hover:bg-amber-100 text-amber-700">
+        Classes
+      </a>
+    </div>
+
+  </nav>
+</aside>
+
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8">
+    <router-outlet></router-outlet>
+  </main>
+</div>
