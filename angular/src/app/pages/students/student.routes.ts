@@ -6,9 +6,9 @@ export const STUDENT_ROUTES: Routes = [
     loadComponent: () =>
       import('./add-students/add-students').then(m => m.AddStudents),
   },
-//   {
-//     path: 'list',
-//     loadComponent: () =>
-//       import('./student-list/student-list').then(m => m.StudentList),
-//   }
+  {
+    path: 'list',
+    loadComponent: () =>
+      import('./student-list/student-list').then(m => m.StudentList),
+  }
 ];

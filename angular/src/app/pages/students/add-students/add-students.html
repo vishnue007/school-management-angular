@@ -5,49 +5,56 @@
       Add New Student
     </h2>
 
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form [formGroup]="studentForm" (ngSubmit)="submit()" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <!-- First Name -->
       <div>
-        <label class="block font-semibold mb-2">First Name</label>
-        <input type="text"
+        <label for="firstname" class="block font-semibold mb-2">First Name</label>
+        <input id="firstname" type="text" formControlName="firstname"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter first name" />
       </div>
 
       <!-- Last Name -->
       <div>
-        <label class="block font-semibold mb-2">Last Name</label>
-        <input type="text"
+        <label for="lastname" class="block font-semibold mb-2">Last Name</label>
+        <input id="lastname" type="text" formControlName="lastname"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter last name" />
       </div>
 
+      <div>
+        <label for="email" class="block font-semibold mb-2">Email</label>
+        <input id="email" type="text" formControlName="email"
+          class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
+          placeholder="Enter email" />
+      </div>
+
       <!-- Gender -->
       <div>
-        <label class="block font-semibold mb-2">Gender</label>
-        <select
+        <label for="gender" class="block font-semibold mb-2">Gender</label>
+        <select id="gender" formControlName="gender"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300">
-          <option value="" disabled selected>Select gender</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+          <option value="" disabled>Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
       <!-- DOB -->
       <div>
-        <label class="block font-semibold mb-2">Date of Birth</label>
-        <input type="date"
+        <label for="dob" class="block font-semibold mb-2">Date of Birth</label>
+        <input id="dob" type="date" formControlName="dob"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300" />
       </div>
 
       <!-- Class -->
       <div>
-        <label class="block font-semibold mb-2">Class</label>
-        <select
+        <label for="class" class="block font-semibold mb-2">Class</label>
+        <select id="class" formControlName="class"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300">
-          <option value="" disabled selected>Select Class</option>
+          <option value="" disabled>Select Class</option>
           <option>1st Standard</option>
           <option>2nd Standard</option>
           <option>3rd Standard</option>
@@ -56,32 +63,48 @@
         </select>
       </div>
 
+      <!-- Section -->
       <div>
-        <label class="block font-semibold mb-2">father Name</label>
-        <input type="text"
+        <label for="section" class="block font-semibold mb-2">Section</label>
+        <select id="section" formControlName="section"
+          class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300">
+          <option value="" disabled>Select Section</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+        </select>
+      </div>
+
+      <!-- Father Name -->
+      <div>
+        <label for="fathername" class="block font-semibold mb-2">Father Name</label>
+        <input id="fathername" type="text" formControlName="fathername"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter father name" />
       </div>
 
+      <!-- Mother Name -->
       <div>
-        <label class="block font-semibold mb-2">Mother Name</label>
-        <input type="text"
+        <label for="mothername" class="block font-semibold mb-2">Mother Name</label>
+        <input id="mothername" type="text" formControlName="mothername"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter mother name" />
       </div>
 
       <!-- Phone -->
       <div>
-        <label class="block font-semibold mb-2"> Phone Number</label>
-        <input type="tel"
+        <label for="phone" class="block font-semibold mb-2">Phone Number</label>
+        <input id="phone" type="tel" formControlName="phone"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter phone number" />
       </div>
 
       <!-- Address -->
       <div class="md:col-span-2">
-        <label class="block font-semibold mb-2">Address</label>
-        <textarea rows="3"
+        <label for="address" class="block font-semibold mb-2">Address</label>
+        <textarea id="address" rows="3" formControlName="address"
           class="w-full border rounded-lg px-4 py-2 focus:ring focus:ring-purple-300"
           placeholder="Enter address"></textarea>
       </div>
