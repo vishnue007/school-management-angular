@@ -17,18 +17,18 @@ export class AddStudents {
   successMessage = '';
   constructor(private fb: FormBuilder, private studentService: StudentService, private router: Router) {
     this.studentForm = this.fb.group({
-    firstname: ['', Validators.required],
-    lastname: ['', Validators.required],
-    email: ['', Validators.required],
-    gender: ['', Validators.required],
-    dob: ['', Validators.required],
-    class: ['', Validators.required],
-    section: ['', Validators.required],
-    fathername: ['', Validators.required],
-    mothername: ['', Validators.required],
-    phone: ['', Validators.required],
-    address: ['', Validators.required],
-  });
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.required],
+      gender: ['', Validators.required],
+      dob: ['', Validators.required],
+      class: ['', Validators.required],
+      section: ['', Validators.required],
+      fathername: ['', Validators.required],
+      mothername: ['', Validators.required],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+    });
   }
 
   submit() {
@@ -57,7 +57,7 @@ export class AddStudents {
           this.successMessage = response.message || 'Registration successful!';
           
           setTimeout(() => {
-            this.router.navigate(['/students/add']);
+            this.router.navigate(['/students/list']);
           }, 2000);
         },
         error: (error) => {

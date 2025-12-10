@@ -32,6 +32,21 @@ addStudent(userData: StudentRequest): Observable<AuthResponse> {
   return this.http.post<AuthResponse>(API_URL, userData);
 }
 
+getStudents(): Observable<StudentRequest[]> {
+    return this.http.get<StudentRequest[]>(API_URL);
+}
+
+getStudentById(id: string) {
+  return this.http.get<any>(`${API_URL}/${id}`);
+}
+
+updateStudent(id: string, data: StudentRequest) {
+  return this.http.put(`${API_URL}/${id}`, data);
+}
+
+deleteStudent(id: string) {
+  return this.http.delete(`${API_URL}/${id}`);
+}
 
 }
 
