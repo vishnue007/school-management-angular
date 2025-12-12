@@ -2,7 +2,7 @@
 
   <h2 class="title">Students List</h2>
 
-  <div *ngIf="isLoading()">Loading... {{isLoading()}}</div>
+  <div *ngIf="isLoading()">Loading...</div>
   <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
   <table *ngIf="students.length > 0" class="students-table">
